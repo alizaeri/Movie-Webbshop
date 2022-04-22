@@ -2,8 +2,18 @@
 A fake movie webbshop
 
 ## Running the app
+1. Get the code from github
+```
+Design link goes here!
+```
 
-In the project directory, you can run:
+2. Install modules. In the project directory run:
+```
+npm install
+```
+
+
+3. Start the app. . In the project directory run:
 ```
 npm start
 ```
