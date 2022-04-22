@@ -1,5 +1,5 @@
 # Movie Webshop
-
+A fake movie webbshop
 
 ## Running the app
 
@@ -34,9 +34,9 @@ git checkout -b <<branchname>>
 git push
 ```
 
-3. Create a PR (Pull Request)
+3. Create a PR (Pull Request) in github
 
-4. We merge code together 
+4. We merge code together
 
 
 ## Requirements
