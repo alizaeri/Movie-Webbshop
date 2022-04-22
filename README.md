@@ -4,7 +4,7 @@ A fake movie webbshop
 ## Running the app
 1. Get the code from github
 ```
-Design link goes here!
+git clone https://github.com/MOTMTOKEN/Movie-Webbshop.git
 ```
 
 2. Install modules. In the project directory run:
