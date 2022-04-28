@@ -1,8 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
-
 import Home from "./pages/Home";
 import Error from './pages/Error';
+import GetData from './components/GetData';
+
+
+
 
 const linkStyle = {
   textDecoration: 'none', 
@@ -21,6 +24,7 @@ export default function App() {
         <Route path="/" element={<Home />}/>
         <Route path="*" element={<Error />}/>
       </Routes>
+      <GetData/>
     </Router>
   );
 }
