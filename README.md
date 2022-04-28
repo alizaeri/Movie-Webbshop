@@ -24,7 +24,7 @@ The page will reload when you make changes. You may also see any lint errors in 
 
 ## Design
 ```
-Design link goes here!
+https://www.figma.com/file/fhD0X7YqCAvWelImS0mAc8/Untitled
 ```
 
 ## Track  progress
