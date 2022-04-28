@@ -28,9 +28,7 @@ Design link goes here!
 ```
 
 ## Track  progress
-```
-Trello link goes here! 
-```
+[planning board](https://trello.com/b/jDFiWAqD/webbshop)
 
 ## Working with git 
 
