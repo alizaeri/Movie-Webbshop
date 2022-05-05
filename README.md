@@ -24,13 +24,11 @@ The page will reload when you make changes. You may also see any lint errors in 
 
 ## Design
 ```
-Design link goes here!
+https://www.figma.com/file/fhD0X7YqCAvWelImS0mAc8/Untitled
 ```
 
 ## Track  progress
-```
-Trello link goes here! 
-```
+[planning board](https://trello.com/b/jDFiWAqD/webbshop)
 
 ## Working with git 
 
@@ -39,14 +37,23 @@ Trello link goes here!
 git checkout -b <<branchname>>
 ```
 
-2. Push branch to github (git will guide you...)
+2. Adde your changes to your local repo (It's okay to do several commits before you push
+)
+```
+git add .
+git commit -m <<commit description>>
+```
+
+3. Push branch to github (git will guide you...)
 ```
 git push
 ```
 
-3. Create a PR (Pull Request) in github
+4. Create a PR (Pull Request) in github
 
-4. We merge code together
+5. We merge code together
+
+6. Dont forget to delete branch after merge 
 
 
 ## Requirements
