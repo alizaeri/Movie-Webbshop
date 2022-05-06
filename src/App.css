@@ -1,0 +1,15 @@
+.background{
+    background-color: black;
+}
+.container{
+    margin-left: 2%;
+    margin-right: 2%;
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    color: white;
+}
+.movieimage{
+    width: 100%;
+    height: auto;
+}
