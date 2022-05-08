@@ -1,26 +1,25 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
-import Error from './pages/Error';
+import Search from "./pages/Search";
+import Nav from './pages/Nav';
+import Checkout from './pages/Checkout';
+import Mymovies from './pages/Mymovies';
 
-const linkStyle = {
-  textDecoration: 'none', 
-  padding: '10px', 
-  fontWeight:'bold',
-  color: 'black'
-};
-
-export default function App() {
+function App() {
   return (
     <Router>
-      <nav style={{ marginBottom: '20px'}}>
-        <Link to="/" style={linkStyle}>Home</Link >
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="*" element={<Error />}/>
-      </Routes>
+      <div className='App'>
+        <Nav/>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/search" element={<Search/>} />
+          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/movies" element={<Mymovies/>} />
+        </Routes>
+      </div>
     </Router>
   );
 }
+export default App;

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import MovieCard from "../components/MovieCard";
 
-export default function Home() {
+function Home() {
 
   const [movies, setMovies] = useState([])
   const API_URL =  "https://api.themoviedb.org/3"
@@ -31,10 +31,10 @@ export default function Home() {
 
   return (
     <div className="background">
-      <h1>Home Page</h1>
       <div className="container">
         {rendermovies()}
       </div>
     </div>
   )
 }
+export default Home;
