@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+.aligncenter{
+    text-align: center;
+}
+.background{
+    height: 120%;
+    background-color: black;
+}
+.backgroundvh{
+    background-color: black;
+    height: 100%;
+}
+.container{
+    margin-top: -1%;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    color: white;
+}
+.container2{
+    margin-top: 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    color: white;
+}
+.movieimg{
+    border-radius: 6%;
+}
+.movieidiv{
+    margin-top: 10%;
+    width: 90%;
+    height: auto;
+}
+.movietitletext{
+    text-align: center;
+    font-size: 80%;
+}
+.whitecolor{
+    color: white;
+}
+.Navbar{
+    background-color: black;
+}
+.Homebtncss{
+    width: 5%;
+    height: auto;
+    margin-top: 2%;
+    margin-left: 47.5%;
+    margin-bottom: 2%;
+}
+.Searchbtncss{
+    position: absolute;
+    width: 4%;
+    height: auto;
+    margin-left: -48%;
+    margin-top: 2.7%;
+}
+.Checkoutbtncss{
+    position: absolute;
+    width: 4%;
+    height: auto;
+    margin-left: 39%;
+    margin-top: 2.7%;
+}
+.Mymoviesbtncss{
+    position: absolute;
+    width: 4%;
+    height: auto;
+    margin-left: 33%;
+    margin-top: 2.7%;
+}
+.Homebtncss:hover,.Searchbtncss:hover,.Checkoutbtncss:hover,.Mymoviesbtncss:hover {
+    opacity: 0.7;
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+}
+.Homebtncss:active,.Searchbtncss:active,.Checkoutbtncss:active,.Mymoviesbtncss:active {
+    opacity: 0.3;
+    transition-duration: 0.2s;
+}
+.Searchinput{
+    font-family: 'Hi Melody', cursive;
+    font-size: 250%;
+    margin-top: 3%;
+    width: 40%;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+.Searchinput:focus, textarea {
+    outline: none !important;
+}
