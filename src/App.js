@@ -10,7 +10,6 @@ import Checkout from './pages/Checkout';
 import Mymovies from './pages/Mymovies';
 
 export default function App() {
-
   const [movies, setMovies] = useState([])
   const API_URL =  "https://api.themoviedb.org/3"
 
