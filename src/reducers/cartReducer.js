@@ -7,8 +7,8 @@ const initialState = {
 
 const addToCart = createAction('add movie cart');
 const removeFromCart = createAction('remove movie from cart');
-const checkout = createAction('do checkout');
-const actions = {addToCart, removeFromCart, checkout };
+const pay = createAction('pay');
+const actions = {addToCart, removeFromCart, pay };
 
 
 function movieExistsInCart(movies, movie){
@@ -38,7 +38,7 @@ const reducer = createReducer(initialState, {
         }
         return {...state, count: action.payload}
     },
-    [checkout] : (state, action) => (
+    [pay] : (state, action) => (
         initialState
     )
     
