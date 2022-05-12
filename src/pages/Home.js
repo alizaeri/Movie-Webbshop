@@ -1,25 +1,8 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import MovieCard from "../components/MovieCard";
 
-function Home() {
-
-  const [movies, setMovies] = useState([])
-  const API_URL =  "https://api.themoviedb.org/3"
-
-  const fetchMovies = async () => {
-    const {data: {results}} = await axios.get(`${API_URL}/discover/movie`, {
-      params: {
-        api_key: `a7cddb88437f9455b593798fbb4a34fa`
-      }
-    })
-    setMovies(results)
-  }
-  useEffect(() => {
-  fetchMovies()
-    }, [ ])
-
+export default function Home({movies}) {
+ 
   const rendermovies = () => (
     movies.map(movie => (
       <MovieCard
@@ -34,7 +17,6 @@ function Home() {
       <div className="container">
         {rendermovies()}
       </div>
-    </div>
+     </div>
   )
 }
-export default Home;
