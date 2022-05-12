@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { useEffect } from "react";
 import axios from "axios";
 import MovieCard from '../components/MovieCard';
 

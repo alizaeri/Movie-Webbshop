@@ -1,12 +1,9 @@
 import React from 'react';
 import '../App.css';
-import {useSelector } from "react-redux";
+import {useSelector, useDispatch } from "react-redux";
 import MovieCard from "../components/MovieCard";
 import {stripPrecision} from '../util/math'
-
-import { useDispatch } from 'react-redux';
 import { actions } from '../reducers/cartReducer';
-
 
 export default function Checkout() {
     const count = useSelector( state => state.cart.count);
@@ -29,14 +26,11 @@ export default function Checkout() {
 
     return (
         <div className='aligncenter'>
-            
             <h1 >
                 Total: ({count} x 19.90) {stripPrecision(count*19.90, 2)} SEK
-                
             </h1>
             {rendermovies()}
             <button hidden={count === 0} onClick={ handlePay }>Pay</button>
-
         </div>
     );
 }

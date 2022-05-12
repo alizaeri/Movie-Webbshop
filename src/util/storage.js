@@ -22,4 +22,3 @@ export function getWithExpiry(key) {
 	}
 	return item.value
 }
-
