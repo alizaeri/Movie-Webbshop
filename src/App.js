@@ -14,17 +14,14 @@ import {setWithExpiry, getWithExpiry} from './util/storage'
 
 export default function App() {
   const [movies, setMovies] = useState([])
-  const [debug, setDebug] = useState(true)
+  const [debug, setDebug] = useState(false)
   const API_URL =  "https://api.themoviedb.org/3"
   
 
   const LOCAL_STORAGE_KEY = 'MovieWebshopApp.mostpopular'
 
   const api = axios.create({
-    baseURL: 'https://api.themoviedb.org/3',
-    params: {
-      api_key: `a7cddb88437f9455b593798fbb4a34fa`
-    }
+    baseURL: 'https://api.themoviedb.org/3?api_key=a7cddb88437f9455b593798fbb4a34fa',
   })
   const apiLocal = axios.create({
     baseURL: 'static/asset'
@@ -35,13 +32,10 @@ export default function App() {
     try {
       let res
 
-      if(debug === true){
-        res = await apiLocal.get('movies.json').then(res => res)
-      }else{
-        res = await api.get('/discover/movie').then(res => res)
-      }
+      const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=de835b19001cc7adb8bbdb742da78711&language=en-US&sort_by=popularity.desc&include_video=false&page=`)
+
+      setMovies(response.data.results)
       
-      setMovies(res.data)
     }catch(err){
       console.log('Failed getting data: '+ err)
     } 
@@ -59,7 +53,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    setWithExpiry(LOCAL_STORAGE_KEY, movies, 30000) //TTL 30 sec
+    setWithExpiry(LOCAL_STORAGE_KEY, movies, 0) //TTL 30 sec
   }, [movies])
 
   return (

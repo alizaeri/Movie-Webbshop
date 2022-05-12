@@ -28,6 +28,7 @@ const MovieCard = ({movie, cart=false}) => {
       };
     return (
        
+        <div>
         <Link to={newTo}>
         <div className="moviediv">
             
@@ -36,11 +37,16 @@ const MovieCard = ({movie, cart=false}) => {
 
 
             <h4 className="movietitletext" >{movie.title}</h4>
-            <button hidden={cart} onClick={ handleAdd }>Add</button>
-            <button hidden={!cart} onClick={ handleRemove }>Remove</button>
 
         </div>
+        
         </Link>
+
+        
+<button hidden={cart} onClick={ handleAdd }>Add</button>
+<button hidden={!cart} onClick={ handleRemove }>Remove</button>
+
+</div>
         
     );
 }
