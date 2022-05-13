@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../Detailview.css";
 
 
@@ -12,7 +11,6 @@ export const Detailview = () => {
     const [movie, setMovie] = useState({});
 
     const base = "https://image.tmdb.org/t/p/w500"
-
 
     useEffect(() => {
         fetchMovieDetails(id)
@@ -25,7 +23,6 @@ export const Detailview = () => {
         console.log(data);
         setMovie(data);
     }
-
        
   return (
 <div className="detail">
@@ -77,7 +74,4 @@ export const Detailview = () => {
                         
   )
 }
-
-
-
 export default Detailview;

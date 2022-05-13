@@ -2,11 +2,6 @@ import React from "react";
 import MovieCard from "../components/MovieCard";
 
 export default function Home({movies}) {
- 
-
-  console.log(movies)
-
-
   const rendermovies = () => (
     movies.map(movie => (
       <MovieCard

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import './App.css';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Nav from './pages/Nav';
@@ -15,11 +14,10 @@ import {setWithExpiry, getWithExpiry} from './util/storage'
 export default function App() {
   const [movies, setMovies] = useState([])
   const [debug, setDebug] = useState(false)
-  const API_URL =  "https://api.themoviedb.org/3"
   
-
   const LOCAL_STORAGE_KEY = 'MovieWebshopApp.mostpopular'
 
+  const API_URL =  "https://api.themoviedb.org/3"
   const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3?api_key=a7cddb88437f9455b593798fbb4a34fa',
   })
@@ -28,21 +26,21 @@ export default function App() {
   })
 
   async function fetchMovies() {
-    var fetchedMovies = [...movies]
     try {
-      let res
-
-      const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=de835b19001cc7adb8bbdb742da78711&language=en-US&sort_by=popularity.desc&include_video=false&page=`)
-
-      setMovies(response.data.results)
-      
+      if(debug){
+        const res = await apiLocal.get('movies.json').then(res => res)
+        setMovies(res.data)
+      }else{
+        const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=de835b19001cc7adb8bbdb742da78711&language=en-US&sort_by=popularity.desc&include_video=false&page=`)
+        setMovies(response.data.results)
+      }
     }catch(err){
       console.log('Failed getting data: '+ err)
     } 
   }
 
   useEffect(() => {
-    const storedMovies = getWithExpiry(LOCAL_STORAGE_KEY)//JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    const storedMovies = getWithExpiry(LOCAL_STORAGE_KEY)
     if (storedMovies){ 
       console.log("Have data in localstorage, using it!")
       setMovies(storedMovies)
@@ -53,7 +51,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    setWithExpiry(LOCAL_STORAGE_KEY, movies, 0) //TTL 30 sec
+    setWithExpiry(LOCAL_STORAGE_KEY, movies, 30000) //TTL 30 sec
   }, [movies])
 
   return (

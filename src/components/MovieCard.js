@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import Detailview from "../pages/Detailview";
 // <Link to={`/movie/${movie.id}`>
 
-
-
 import { useDispatch } from "react-redux";
 import { actions } from '../reducers/cartReducer';
-
 
 const MovieCard = ({movie, cart=false}) => {
     const dispatch = useDispatch();
@@ -31,24 +28,14 @@ const MovieCard = ({movie, cart=false}) => {
         <div>
         <Link to={newTo}>
         <div className="moviediv">
-            
             {movie.poster_path ? <img className='movieimg' src={`${image_path}${movie.poster_path}`} alt="" width="100%" height="auto"/> 
              : null}
-
-
             <h4 className="movietitletext" >{movie.title}</h4>
-
         </div>
-        
         </Link>
-
-        
-<button hidden={cart} onClick={ handleAdd }>Add</button>
-<button hidden={!cart} onClick={ handleRemove }>Remove</button>
-
-</div>
-        
+            <button hidden={cart} onClick={ handleAdd }>Add</button>
+            <button hidden={!cart} onClick={ handleRemove }>Remove</button>
+        </div>
     );
 }
-
 export default MovieCard
