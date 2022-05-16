@@ -9,14 +9,12 @@ import Checkout from './pages/Checkout';
 import Mymovies from './pages/Mymovies';
 import Detailview from './pages/Detailview';
 
-import {setWithExpiry, getWithExpiry} from './util/storage'
+import {setWithExpiry, getWithExpiry, ALL_MOVIES_STORAGE_KEY} from './util/storage'
 
 export default function App() {
   const [movies, setMovies] = useState([])
   const [debug, setDebug] = useState(false)
   
-  const LOCAL_STORAGE_KEY = 'MovieWebshopApp.mostpopular'
-
   const API_URL =  "https://api.themoviedb.org/3"
   const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3?api_key=a7cddb88437f9455b593798fbb4a34fa',
@@ -40,7 +38,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    const storedMovies = getWithExpiry(LOCAL_STORAGE_KEY)
+    const storedMovies = getWithExpiry(ALL_MOVIES_STORAGE_KEY)
     if (storedMovies){ 
       console.log("Have data in localstorage, using it!")
       setMovies(storedMovies)
@@ -51,7 +49,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    setWithExpiry(LOCAL_STORAGE_KEY, movies, 30000) //TTL 30 sec
+    setWithExpiry(ALL_MOVIES_STORAGE_KEY, movies, 30000) //TTL 30 sec
   }, [movies])
 
   return (

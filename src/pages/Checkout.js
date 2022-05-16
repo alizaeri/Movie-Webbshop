@@ -18,7 +18,7 @@ export default function Checkout() {
     const rendermovies = () => (
         movies.map( element =>
             <MovieCard
-                cart={true}
+                remove={true}
                 key={element.id}
                 movie={element}/>
                     
