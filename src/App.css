@@ -30,6 +30,7 @@
 }
 .movieimg{
     border-radius: 6%;
+  
 }
 .movieidiv{
     margin-top: 10%;
@@ -97,3 +98,15 @@
 .Searchinput:focus, textarea {
     outline: none !important;
 }
+.moviediv{
+    height: auto;
+    width: auto;
+  
+  }
+  .checkContent{
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  
+  
