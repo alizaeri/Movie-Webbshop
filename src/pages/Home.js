@@ -5,6 +5,7 @@ export default function Home({movies}) {
   const rendermovies = () => (
     movies.map(movie => (
       <MovieCard
+      add={true}
       key={movie.id}
       movie={movie}
       />

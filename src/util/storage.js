@@ -1,9 +1,17 @@
+
+//TTL 0 gives ttl according to browser app memory
 export function setWithExpiry(key, value, ttl) {
 	const now = new Date()
+	let exp = 0
+	if(ttl === 0){
+		exp = 0
+	}else{
+		exp = now.getTime() + ttl
+	}
 
 	const item = {
 		value: value,
-		expiry: now.getTime() + ttl,
+		expiry: exp,
 	}
 	localStorage.setItem(key, JSON.stringify(item))
 }
@@ -16,9 +24,14 @@ export function getWithExpiry(key) {
 	const item = JSON.parse(itemStr)
 	const now = new Date()
 
-	if (now.getTime() > item.expiry) {
+	if (item.expiry !== 0 && now.getTime() > item.expiry) {
 		localStorage.removeItem(key)
 		return null
 	}
 	return item.value
 }
+
+
+export const ALL_MOVIES_STORAGE_KEY = 'MovieWebshopApp.mostpopular'
+
+export const MY_MOVIES_STORAGE_KEY = 'MovieWebshopApp.my'

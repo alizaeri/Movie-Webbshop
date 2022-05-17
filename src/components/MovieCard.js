@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Detailview from "../pages/Detailview";
-// <Link to={`/movie/${movie.id}`>
 
 import { useDispatch } from "react-redux";
 import { actions } from '../reducers/cartReducer';
 
-const MovieCard = ({movie, cart=false}) => {
+const MovieCard = ({movie, add=false, remove=false}) => {
     const dispatch = useDispatch();
 
     const handleAdd = () => {
@@ -24,7 +22,6 @@ const MovieCard = ({movie, cart=false}) => {
         backUrl: backUrl
       };
     return (
-       
         <div>
         <Link to={newTo}>
         <div className="moviediv">
@@ -33,8 +30,8 @@ const MovieCard = ({movie, cart=false}) => {
             <h4 className="movietitletext" >{movie.title}</h4>
         </div>
         </Link>
-            <button hidden={cart} onClick={ handleAdd }>Add</button>
-            <button hidden={!cart} onClick={ handleRemove }>Remove</button>
+            <button hidden={!add} onClick={ handleAdd }>Add</button>
+            <button hidden={!remove} onClick={ handleRemove }>Remove</button>
         </div>
     );
 }
