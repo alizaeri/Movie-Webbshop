@@ -24,6 +24,7 @@ const fetchsearchedtitle = async (searchkey) => {
 const rendermovies = () => (
   movies.map(movie => (
     <MovieCard
+    add={true}
     key={movie.id}
     movie={movie}
     />
