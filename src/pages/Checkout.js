@@ -34,7 +34,7 @@ export default function Checkout() {
 
             </div>
             
-            <button hidden={count === 0} onClick={ handlePay }>Pay</button>
+            <button className='payButton' hidden={count === 0} onClick={ handlePay }>Pay</button>
         </div>
     );
 }

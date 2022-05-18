@@ -101,6 +101,7 @@
 .moviediv{
     height: auto;
     width: auto;
+   
   
   }
   .checkContent{
@@ -108,5 +109,88 @@
     gap: 1%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
-  
+  .addButton , .removeButton {
+      margin: 0;
+     
+      width: 80%;
+      height: 30px;
+      background-color: rgb(104, 104, 104);
+      border-radius: 0.5em;
+  }
+  .addButton:hover, .removeButton:hover{
+      background-color: rgb(192, 192, 192);
+  }
+  .addButton:active , .removeButton:active{
+      background-color: aliceblue;
+  }
+  .payButton{
+    margin-top: 30px;
+    width: 250px;
+    height: 30px;
+    background-color: rgb(163, 6, 6);
+    border-radius: 0.5em;
+    color: aliceblue;
+    
+    
+
+  }
+  .payButton:hover{
+    background-color: rgb(209, 14, 14);
+  }
+  .payButton:active{
+      background-color: rgb(255, 0, 0);
+  }
+  .Cardmovie{
+        margin: auto;
+        width: 90%;
+        border: 1px solid rgb(14, 14, 14);
+        padding: 10px;
+        border-radius: 1em;
+        align-content: center;
+    
+  }
+  .center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .Navbar{
+      background-color: rgb(14, 14, 14);
+  }
+
+
+  @media  screen and (min-width: 500px) and (max-width: 700px){
+    .checkContent,.container2,.container{
+      grid-template-columns: 1fr 1fr ;
+    }
+}
+@media  screen and  (max-width: 500px) {
+    .checkContent,.container2,.container{
+      grid-template-columns: 1fr ;
+    }
+}
+@media  screen and (min-width: 1400px) {
+    .checkContent,.container2,.container{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+@media  screen and (max-width: 1400px) and (min-width: 1100px){
+    .checkContent,.container2,.container{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    }
+}
+@media  screen and (max-width: 1100px) and (min-width: 900px)  {
+    .checkContent,.container2,.container{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media  screen and (max-width: 900px) and (min-width: 700px) {
+    .checkContent,.container2,.container{
+      grid-template-columns: 1fr 1fr 1fr;
+
+    }
+ 
+}
+
+
   
