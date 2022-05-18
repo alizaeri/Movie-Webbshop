@@ -22,7 +22,7 @@ const MovieCard = ({movie, add=false, remove=false}) => {
         backUrl: backUrl
       };
     return (
-        <div>
+        <div className="Cardmovie">
         <Link to={newTo}>
         <div className="moviediv">
             {movie.poster_path ? <img className='movieimg' src={`${image_path}${movie.poster_path}`} alt="" width="100%" height="auto"/> 
@@ -30,8 +30,12 @@ const MovieCard = ({movie, add=false, remove=false}) => {
             <h4 className="movietitletext" >{movie.title}</h4>
         </div>
         </Link>
-            <button hidden={!add} onClick={ handleAdd }>Add</button>
-            <button hidden={!remove} onClick={ handleRemove }>Remove</button>
+            <div className="center">
+                 <button className="addButton" hidden={!add} onClick={ handleAdd }>Add</button>
+                 <button className="removeButton" hidden={!remove} onClick={ handleRemove }>Remove</button>
+
+            </div>
+            
         </div>
     );
 }
