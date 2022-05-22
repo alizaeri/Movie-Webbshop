@@ -26,21 +26,23 @@ export const Detailview = () => {
        
   return (
 <div className="detail">
-			<div className="detail__left">
+	<div className="detail__left">
 				<img
 					className="detail__poster"
 					src={`${base}${movie.poster_path}`}
 					alt="movie"
 				/>
-			</div>
-			<div className="detail__right">
-				<div className="detail__one">
+	</div>
+  
+
+	<div className="detail__right">
+		<div className="detail__one">
 					<h1 className="detail__title" >
 						{movie ? movie.title || movie.name : ""}
 					</h1>
 					<p className="detail__desc">{movie.overview}</p>
-				</div>
-                <div className="detail__data">
+		</div>
+            <div className="detail__data">
 					<p className="detail__pop">
 						Popularity Points : {movie.popularity}
 					</p>
@@ -65,12 +67,10 @@ export const Detailview = () => {
                             Released On :{" "}
                             {movie.first_air_date || movie.release_date + "  "}
                         </p>
-                    </div>
-                    <button className="btn btn-added">
-							Add to cart
-						</button>
-                    </div>
-                    </div>
+            </div>
+                    
+    </div>
+</div>
                         
   )
 }
