@@ -2,13 +2,8 @@
 .aligncenter{
     text-align: center;
 }
-.background{
-    height: 120%;
+.body{
     background-color: black;
-}
-.backgroundvh{
-    background-color: black;
-    height: 100%;
 }
 .container{
     margin-top: -1%;
@@ -143,8 +138,7 @@
   .Cardmovie{
         margin: auto;
         width: 90%;
-        border: 1px solid rgb(14, 14, 14);
-        padding: 10px;
+        padding: 5px;
         border-radius: 1em;
         align-content: center;
     
@@ -154,10 +148,21 @@
       justify-content: center;
       align-items: center;
   }
-  .Navbar{
-      background-color: rgb(14, 14, 14);
-  }
-
+  .category{
+    margin-top: -3%;
+    margin-left: 45%;
+    margin-bottom: 2%;
+    text-align-last:center;
+    width: 10%;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: 'Hi Melody', cursive;
+    font-size: 150%;
+}
+.category:focus {
+    outline: 0;
+}
 
   @media  screen and (min-width: 500px) and (max-width: 750px){
     .checkContent,.container2,.container{
@@ -191,6 +196,7 @@
     }
  
 }
-
-
-  
+.buttontest {
+    height: 200px;
+    width: 200px;
+}

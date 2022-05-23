@@ -1,26 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { useDispatch } from "react-redux";
 import { actions } from '../reducers/cartReducer';
 
 const MovieCard = ({movie, add=false, remove=false}) => {
     const dispatch = useDispatch();
-
     const handleAdd = () => {
         dispatch(actions.addToCart(movie));
     }
     const handleRemove = () => {
         dispatch(actions.removeFromCart(movie));
     }
-  
     const image_path = "https://image.tmdb.org/t/p/w500"
     const backUrl = '/'
-
     const newTo = { 
         pathname: `/movie/${movie.id}`,
         backUrl: backUrl
-      };
+    };
     return (
         <div className="Cardmovie">
         <Link to={newTo}>
