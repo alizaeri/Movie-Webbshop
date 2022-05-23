@@ -23,7 +23,7 @@ const MovieCard = ({movie, add=false, remove=false}) => {
       };
     return (
         <div className="Cardmovie">
-        <Link to={newTo}>
+        <Link to={newTo} className='linkStyle'>
         <div className="moviediv">
             {movie.poster_path ? <img className='movieimg' src={`${image_path}${movie.poster_path}`} alt="" width="100%" height="auto"/> 
              : null}
