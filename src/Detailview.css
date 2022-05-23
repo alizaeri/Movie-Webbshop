@@ -114,3 +114,15 @@
 	
   
 }
+@media  screen and (max-width: 1600px) and (min-width: 1100px) {
+	.detail__title {
+		font-size: 4rem;
+		letter-spacing: 2px;
+	}
+	.detail__desc {
+		font-size: 1.5rem;
+		margin-top: 4rem;
+		line-height: 3.33rem;
+	}
+    
+}
