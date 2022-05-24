@@ -8,10 +8,13 @@ import Nav from './pages/Nav';
 import Checkout from './pages/Checkout';
 import Mymovies from './pages/Mymovies';
 import Detailview from './pages/Detailview';
-
 import {setWithExpiry, getWithExpiry, ALL_MOVIES_STORAGE_KEY} from './util/storage'
 
-export default function App() {
+
+export default function App({}) {
+
+
+
   const [movies, setMovies] = useState([])
   const [debug, setDebug] = useState(false)
   
@@ -23,13 +26,16 @@ export default function App() {
     baseURL: 'static/asset'
   })
 
-  async function fetchMovies() {
+  async function fetchMovies(genresid) {
+    console.log("FetchMovies Ran " + genresid) 
+    console.log("APIKEY:" + process.env.REACT_APP_MOVIE_WEBBSHOP_API_KEY)
     try {
       if(debug){
         const res = await apiLocal.get('movies.json').then(res => res)
         setMovies(res.data)
       }else{
-        const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=de835b19001cc7adb8bbdb742da78711&language=en-US&sort_by=popularity.desc&include_video=false&page=`)
+        const response = await axios.get
+        (`https://api.themoviedb.org/3/discover/movie?api_key=de835b19001cc7adb8bbdb742da78711&with_genres=${genresid}&language=en-US&sort_by=popularity.desc&include_video=false&page=`)
         setMovies(response.data.results)
       }
     }catch(err){
@@ -48,6 +54,7 @@ export default function App() {
     }
   }, [])
 
+
   useEffect(() => {
     setWithExpiry(ALL_MOVIES_STORAGE_KEY, movies, 30000) //TTL 30 sec
   }, [movies])
@@ -58,7 +65,7 @@ export default function App() {
       <div className='App'>
         <Nav/>
         <Routes>
-          <Route path="/" element={<Home movies={movies}/>} />
+          <Route path="/" element={<Home movies={movies} fetchnewgenre={fetchMovies}/>} />
           <Route path="/search" element={<Search/>} />
           <Route path="/checkout" element={<Checkout/>} />
           <Route path="/movies" element={<Mymovies/>} />

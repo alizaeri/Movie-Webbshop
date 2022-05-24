@@ -40,7 +40,7 @@ const searchmovie = (e) => {
     return (
       <div className='backgroundvh' style={{textAlign: 'center'}}>
         <form onSubmit={searchmovie}>
-          <input onChange={(e) => setsearchkey(e.target.value)} type="text" placeholder="Search here..." className='Searchinput'/>
+          <input pattern="([A-z0-9À-ž\s]){2,}" onChange={(e) => setsearchkey(e.target.value)} type="text" placeholder="Search here..." className='Searchinput'/>
         </form>
         <div className="container2">
           {rendermovies()}
