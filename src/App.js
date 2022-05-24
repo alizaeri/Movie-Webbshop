@@ -8,7 +8,6 @@ import Nav from './pages/Nav';
 import Checkout from './pages/Checkout';
 import Mymovies from './pages/Mymovies';
 import Detailview from './pages/Detailview';
-
 import {setWithExpiry, getWithExpiry, ALL_MOVIES_STORAGE_KEY} from './util/storage'
 
 
@@ -29,6 +28,7 @@ export default function App({}) {
 
   async function fetchMovies(genresid) {
     console.log("FetchMovies Ran " + genresid) 
+    console.log("APIKEY:" + process.env.REACT_APP_MOVIE_WEBBSHOP_API_KEY)
     try {
       if(debug){
         const res = await apiLocal.get('movies.json').then(res => res)

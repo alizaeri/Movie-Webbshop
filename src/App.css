@@ -32,9 +32,30 @@
     width: 90%;
     height: auto;
 }
+.movieslinkstyling{
+    text-decoration: none;
+}
+.movieslinkstyling:link{
+    text-decoration: none;
+}
+.movieslinkstyling:visited{
+    text-decoration: none;
+}
+.movieslinkstyling:active{
+    text-decoration: none;
+}
 .movietitletext{
+    font-family: 'Hi Melody', cursive;
+    text-decoration: none;
+    color: white;
     text-align: center;
-    font-size: 80%;
+    font-size: 150%;
+}
+.movietitletext:visited{
+    text-decoration: none;
+}
+.movietitletext:link{
+    text-decoration: none;
 }
 .whitecolor{
     color: white;
@@ -104,19 +125,22 @@
     gap: 1%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
-  .addButton , .removeButton {
-      margin: 0;
-     
-      width: 80%;
-      height: 30px;
-      background-color: rgb(104, 104, 104);
-      border-radius: 0.5em;
+
+  .addbutton , .removebutton {
+    width: 40%;
   }
-  .addButton:hover, .removeButton:hover{
-      background-color: rgb(192, 192, 192);
+  .addbutton:hover, .removebutton:hover{
+    opacity: 0.7;
+    transform: scale(1.2);
+    transition-duration: 0.5s;
   }
-  .addButton:active , .removeButton:active{
-      background-color: aliceblue;
+  .addbutton:active , .removebutton:active{
+    opacity: 0.3;
+    transition-duration: 0.2s;
+  }
+  .addbutton:visited{
+    opacity: 0;
+    transition-duration: 0.2s;
   }
   .payButton{
     margin-top: 30px;
@@ -195,8 +219,4 @@
 
     }
  
-}
-.buttontest {
-    height: 200px;
-    width: 200px;
 }

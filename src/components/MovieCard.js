@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { actions } from '../reducers/cartReducer';
+import Addtocartbtn from '../images/Addtocartbtn.png'
+import Removefromcartbtn from '../images/Removefromcartbtn.png'
 
 const MovieCard = ({movie, add=false, remove=false}) => {
     const dispatch = useDispatch();
@@ -19,19 +21,17 @@ const MovieCard = ({movie, add=false, remove=false}) => {
     };
     return (
         <div className="Cardmovie">
-        <Link to={newTo}>
+        <Link className="movieslinkstyling" to={newTo}>
         <div className="moviediv">
             {movie.poster_path ? <img className='movieimg' src={`${image_path}${movie.poster_path}`} alt="" width="100%" height="auto"/> 
              : null}
-            <h4 className="movietitletext" >{movie.title}</h4>
+            <p className="movietitletext" >{movie.title}</p>
         </div>
         </Link>
             <div className="center">
-                 <button className="addButton" hidden={!add} onClick={ handleAdd }>Add</button>
-                 <button className="removeButton" hidden={!remove} onClick={ handleRemove }>Remove</button>
-
-            </div>
-            
+                <img onClick={ handleAdd }  hidden={!add} className="addbutton" src={Addtocartbtn} alt=''></img>
+                <img onClick={ handleRemove }  hidden={!remove} className="removebutton" src={Removefromcartbtn} alt=''></img>
+            </div>        
         </div>
     );
 }
