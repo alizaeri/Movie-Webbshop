@@ -127,7 +127,8 @@
   }
   .addbutton , .removebutton {
     width: 40%;
-  .addbutton:hover, .removebutton:hover{
+  }
+    .addbutton:hover , .removebutton:hover{
     opacity: 0.7;
     transform: scale(1.2);
     transition-duration: 0.5s;
