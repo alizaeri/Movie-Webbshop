@@ -10,11 +10,13 @@ import Homebtnimage from '../images/Homebtn.png';
 export default function Home() {
   const [movies, setMovies]= useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentGenre, setCurrentGenre] = useState("")
   let page = currentPage
   
   async function fetchMovies(page="1",genresid=""){
     try{
       const data = await fetch  (`https://api.themoviedb.org/3/discover/movie?api_key=de835b19001cc7adb8bbdb742da78711&with_genres=${genresid}&language=en-US&sort_by=popularity.desc&include_video=false&page=${page}`)
+      console.log(`https://api.themoviedb.org/3/discover/movie?api_key=de835b19001cc7adb8bbdb742da78711&with_genres=${genresid}&language=en-US&sort_by=popularity.desc&include_video=false&page=${page}`)
       const response = await data.json();
       setMovies(response.results);
     
@@ -42,9 +44,11 @@ export default function Home() {
   )
 
 function changegenre() {
-  var genresid = document.getElementById("genres").value;
+  var genresid = document.getElementById("genres").value.toString();
+  setCurrentGenre(genresid)
   console.log(genresid)
-  fetchMovies(genresid)
+  setCurrentPage(1)
+  fetchMovies(currentPage,genresid)
   movies.map(movie => (
     <MovieCard
     add={true}
@@ -81,7 +85,7 @@ function changegenre() {
            let page = 1 ;
            setCurrentPage(page);
          console.log(currentPage);
-         fetchMovies(page.toString());
+         fetchMovies(page.toString(),currentGenre);
           }} src={FirstPage} alt=''></img>
           <img className='back' onClick={
             ()=> {setCurrentPage(currentPage-1)
@@ -96,7 +100,7 @@ function changegenre() {
             let page = currentPage +1 ;
             setCurrentPage(page);
           console.log(currentPage);
-          fetchMovies(page.toString());
+          fetchMovies(page.toString(),currentGenre);
           }} src={Next} alt=''></img>
          </div>
       
