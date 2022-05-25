@@ -44,11 +44,12 @@ export default function Home() {
   )
 
 function changegenre() {
+  setCurrentPage(1)
   var genresid = document.getElementById("genres").value.toString();
   setCurrentGenre(genresid)
   console.log(genresid)
-  setCurrentPage(1)
-  fetchMovies(currentPage,genresid)
+  
+  fetchMovies(1,genresid)
   movies.map(movie => (
     <MovieCard
     add={true}
